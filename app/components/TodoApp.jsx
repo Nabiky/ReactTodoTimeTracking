@@ -1,5 +1,6 @@
 var React = require('react');
 var TodoList = require('TodoList');
+var AddTodo = require('AddTodo');
 
  var TodoApp = React.createClass({
 
@@ -22,12 +23,17 @@ var TodoList = require('TodoList');
        ]
      };
    },
+
+  handleAddTodo: function (text){
+  alert('new Todo ' + text);
+  },
    render: function () {
      var {todos} = this.state;
      return (
        <div>
         TodoApp.jsx
-        <TodoList todos={todos}/>
+        <TodoList todos = {todos}/>
+        <AddTodo onAddTodo = {this.handleAddTodo}/>
        </div>
      )
    }
