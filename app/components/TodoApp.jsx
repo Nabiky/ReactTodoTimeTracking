@@ -1,12 +1,16 @@
 var React = require('react');
 var TodoList = require('TodoList');
 var AddTodo = require('AddTodo');
+var TodoSearch = require('TodoSearch');
 
  var TodoApp = React.createClass({
-
+//set default values to
    getInitialState: function () {
-     return {
-       todos: [
+     return {                    // when I first start the app I'm only gonna see
+         showCompleted: false,  //Todos that I haven't yet finished
+         searchText: '',  // we want to return all Todo items not matter what their text is.
+
+         todos: [
          {
            id: 1,
            text: 'Walk the dog'
@@ -25,13 +29,20 @@ var AddTodo = require('AddTodo');
    },
 
   handleAddTodo: function (text){
-  alert('new Todo ' + text);
+   alert('new Todo ' + text);
   },
-   render: function () {
+  handleSearch: function (showCompleted, searchText) {
+    this.setState({
+      showCompleted: showCompleted,
+      searchText: searchText.toLowerCase() // to search either capital or lowercase
+    });
+    },
+  render: function () {
      var {todos} = this.state;
      return (
        <div>
         TodoApp.jsx
+        <TodoSearch onSearch={this.handleSearch}/>
         <TodoList todos = {todos}/>
         <AddTodo onAddTodo = {this.handleAddTodo}/>
        </div>
