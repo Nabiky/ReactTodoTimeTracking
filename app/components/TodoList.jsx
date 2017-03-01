@@ -7,7 +7,7 @@ var TodoList = React.createClass({
    var renderTodos = () => {
      return todos.map((todo) => {
        return (
-         <Todo key={todo.id} {...todo}/> // using the spread operator istead of text={todo.text}
+         <Todo key={todo.id} {...todo} onToggle= {this.props.onToggle} /> // using the spread operator istead of text={todo.text}
        );
      });
    };
