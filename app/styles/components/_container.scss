@@ -1,0 +1,36 @@
+.container {
+  background: $light-grey;
+  border: 1px solid $light-grey-border;
+  border-radius: 5px;
+  padding: 0;
+  margin-botton: 2rem; // container doesn't touch botton of the page
+
+}
+
+.container__header {
+border-bottom: 1px solid $light-grey-border;
+padding: 1rem; // el search un chin separado de el border de el container.
+
+label {
+  cursor: pointer; //poner la manito pa indica q puede click.
+  font-size: 1rem;
+}
+//to select the last child of the container header.
+ > :last-child {
+   align-items: center; // will center items vertically
+   display: flex; // to keep check box on the left and the text on the right.
+ }
+
+}
+
+.container__message {
+  color: $light-color;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.container__footer {
+  //add padding so the input box and the button aren't bumping up against the edge.
+  padding: 1rem 1rem 0 1rem; //top,right,bottom,left
+  border-top: 1px solid $light-grey-border;
+}

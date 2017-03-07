@@ -1,0 +1,33 @@
+.todo {
+  align-items: center;
+  cursor:pointer;
+  display: flex; // to align everything appropiately.
+  padding: 1rem; // put space between each todo item os it's easy to see.
+  transition:: background .3s ease;
+
+  p, input {
+    margin: 0;
+  }
+
+  // is our <input> container
+  > :first-child {
+    margin-right: 1rem;
+  }
+   &:hover { // this is the same as doing this .todo:hover (scss)
+
+     background: #f0f0f0;
+   }
+}
+
+
+.todo__subtext {
+  color: #999;
+}
+
+.todo-completed {
+ p, .todo__subtext {
+   color: $light-color;
+   text-decoration: line-through;// scratch the thing that are done.
+ }
+
+}

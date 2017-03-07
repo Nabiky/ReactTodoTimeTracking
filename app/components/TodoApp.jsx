@@ -30,7 +30,7 @@ componentDidUpdate: function (){
         id: uuid(),
         text: text,
         completed: false,
-        createdAt: moment().unix(),
+        createdAt: moment().unix(),// store the timestamp
         completedAt: undefined
       }
     ]
@@ -41,11 +41,11 @@ handleToggle: function (id){
   var updatedTodos = this.state.todos.map((todo) => {
     if(todo.id === id){
       todo.completed =! todo.completed;// set it to the opposite.
-      todo.completedAt = todo.completed ? moment().unix() : undefined;
+      todo.completedAt = todo.completed ? moment().unix() : undefined; // store the timestamp
     }
     return todo;
   });
-  
+
   this.setState({todos: updatedTodos});
 },
 
@@ -61,10 +61,18 @@ handleToggle: function (id){
      var filteredTodos = TodoAPI.filterTodos(todos, showCompleted, searchText);
      return (
        <div>
-        TodoApp.jsx
-        <TodoSearch onSearch={this.handleSearch}/>
-        <TodoList todos = {filteredTodos} onToggle={this.handleToggle}/>
-        <AddTodo onAddTodo = {this.handleAddTodo}/>
+         <h1 className="page-title">Todo App </h1>
+         <div  className ="row">
+           <div className="column small-centered small-11 medium-6 large-5">
+             <div className="container">
+               <TodoSearch onSearch={this.handleSearch}/>
+               <TodoList todos = {filteredTodos} onToggle={this.handleToggle}/>
+               <AddTodo onAddTodo = {this.handleAddTodo}/>
+             </div>
+           </div>
+
+         </div>
+
        </div>
      )
    }
