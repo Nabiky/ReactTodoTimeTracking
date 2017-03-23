@@ -18,9 +18,12 @@ var TodoAPI = require('TodoAPI');
          todos: TodoAPI.getTodos()
      };
    },
+
 componentDidUpdate: function (){
   TodoAPI.setTodos(this.state.todos);
 },
+
+
 
   handleAddTodo: function (text){
   this.setState({
@@ -37,6 +40,8 @@ componentDidUpdate: function (){
   });
 },
 
+
+
 handleToggle: function (id){
   var updatedTodos = this.state.todos.map((todo) => {
     if(todo.id === id){
@@ -49,12 +54,19 @@ handleToggle: function (id){
   this.setState({todos: updatedTodos});
 },
 
+
+
   handleSearch: function (showCompleted, searchText) {
     this.setState({
       showCompleted: showCompleted,
-      searchText: searchText.toLowerCase() // to search either capital or lowercase
+      searchText: searchText.toLowerCase(), // to search either capital or lowercase
+
     });
+  console.log(1);
     },
+
+
+
 
   render: function () {
      var {todos, showCompleted, searchText} = this.state;

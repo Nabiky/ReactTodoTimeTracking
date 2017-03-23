@@ -1,7 +1,6 @@
 var React = require('react');
 
 var AddTodo = React.createClass({
-
   handleSubmit: function (e) {
     e.preventDefault();
     var todoText = this.refs.todoText.value;
@@ -13,10 +12,8 @@ var AddTodo = React.createClass({
     }else {
       this.refs.todoText.focus();// put the cursor back into the input field
                                 //automatically so they can type some valid text again.
-
-    }
-
-  },
+      }
+ },
 render: function() {
     return(
       <div className="container__footer">

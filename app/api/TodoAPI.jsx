@@ -1,6 +1,7 @@
 var $ = require('jquery');
 
 module.exports = {
+
   setTodos: function (todos) {
     if($.isArray(todos)){
       localStorage.setItem('todos', JSON.stringify(todos));
@@ -51,4 +52,4 @@ module.exports = {
   }
 };
 //localStorage.getItem('todos');
-// run in console -> localStorage.removeItem('todos'); to wipe all off 
+// run in console -> localStorage.removeItem('todos'); to wipe all off
