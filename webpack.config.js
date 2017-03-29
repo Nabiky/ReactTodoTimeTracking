@@ -29,7 +29,8 @@ var path = require('path');
     ],
     alias:{
       applicationStyles: 'app/styles/app.scss',
-      actions: 'app/actions/actions.jsx'
+      actions: 'app/actions/actions.jsx',
+      reducers: 'app/reducers/reducers.jsx'
     },
     extensions: ['', '.js', '.jsx']
   },
@@ -38,7 +39,7 @@ var path = require('path');
       {
          loader:'babel-loader',
          query:{
-            presets:['react','es2015']
+            presets:['react','es2015','stage-0']
           },
       test:/\.jsx?$/,
       exclude:/(node_modules|bower_components)/
